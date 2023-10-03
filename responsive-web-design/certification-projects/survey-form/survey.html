@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Survey Form Clone - freeCodeCamp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1 id="title">freeCodeCamp Survey Form</h1>
+      <p class="para" id="description">
+        Thank you for taking the time to help us improve the platform
+      </p>
+      <form id="survey-form">
+        <fieldset>
+          <label for="name" id="name-label"
+            >Name
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+          /></label>
+          <label for="email" id="email-label"
+            >Email
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Enter your Email"
+              required
+          /></label>
+          <label for="number" id="number-label"
+            >Age (optional)
+            <input
+              id="number"
+              type="number"
+              min="13"
+              max="120"
+              placeholder="Age"
+          /></label>
+        </fieldset>
+
+        <fieldset>
+          <label for="dropdown"
+            >Which option best describes your current role?
+            <select id="dropdown" required>
+              <option>Select current role</option>
+              <option>Student</option>
+              <option>Full Time Job</option>
+              <option>Full Time Learner</option>
+              <option>Prefer not to say</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <p>Would you recommend freeCodeCamp to a friend?</p>
+          <label for="definitely"
+            ><input
+              type="radio"
+              name="recommend"
+              value="definitely"
+              id="definitely"
+            />
+            Definitely</label
+          >
+          <label for="maybe"
+            ><input type="radio" name="recommend" value="maybe" id="maybe" />
+            Maybe</label
+          >
+
+          <label for="not-sure"
+            ><input
+              type="radio"
+              name="recommend"
+              value="not-sure"
+              id="not-sure"
+            />
+            Not sure</label
+          >
+        </fieldset>
+
+        <fieldset>
+          <p>What is your favorite feature of freeCodeCamp?</p>
+          <label
+            ><input type="checkbox" value="Front-end Projects" /> Front-end
+            Projects</label
+          >
+          <label
+            ><input type="checkbox" value="Back-end Projects" /> Back-end
+            Projects</label
+          >
+          <label
+            ><input type="checkbox" value="Data Visualization" /> Data
+            Visualization</label
+          >
+          <label><input type="checkbox" value="Challenges" /> Challenges</label>
+          <label
+            ><input type="checkbox" value="Open Source Community" /> Open Source
+            Community</label
+          >
+          <label
+            ><input type="checkbox" value="Gitter help rooms" /> Gitter help
+            rooms</label
+          >
+          <label><input type="checkbox" value="Videos" /> Videos</label>
+          <label
+            ><input type="checkbox" value="City Meetups" /> City Meetups</label
+          >
+          <label><input type="checkbox" value="Wiki" /> Wiki</label>
+          <label><input type="checkbox" value="Forum" /> Forum</label>
+          <label
+            ><input type="checkbox" value="Additional Courses" /> Additional
+            Courses</label
+          >
+        </fieldset>
+
+        <label
+          >Any comments or suggestions?
+          <textarea
+            rows="6"
+            placeholder="Enter your comment here..."
+          ></textarea>
+        </label>
+
+        <input type="submit" id="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
+</html>

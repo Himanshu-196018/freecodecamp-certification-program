@@ -1,0 +1,97 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: material-ui;
+  font-size: 1rem;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 1rem 5rem;
+  color: white;
+
+  background: hsl(260, 60%, 50%)
+    url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWR1Y2F0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60")
+    no-repeat center;
+
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+main {
+  width: 100%;
+  max-width: 720px;
+  margin: 5rem auto;
+}
+
+h1,
+.para {
+  text-align: center;
+}
+h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.para {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-top: 2rem;
+  padding: 3.5rem 3rem;
+  border-radius: 5px;
+}
+
+fieldset {
+  border: none;
+  margin-top: 1rem;
+}
+
+label,
+p {
+  display: block;
+  font-size: 1.4rem;
+  font-family: monospace;
+}
+p {
+  margin-bottom: 0.8rem;
+}
+
+input,
+select,
+textarea {
+  margin: 0.5rem 0 1.5rem;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  color: grey;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+fieldset + label {
+  margin-top: 2rem;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: hsl(120, 36%, 55%);
+  padding: 1rem 0;
+}
