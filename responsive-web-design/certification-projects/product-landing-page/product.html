@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Landing Page</title>
     <link rel="stylesheet" href="styles.css" />
+    <script
+      defer
+      src="https://kit.fontawesome.com/618476c6d4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header id="header">
-      <img id="header-img" src="" alt="Product logo" />
+      <div class="wrapper">
+        <img
+          id="header-img"
+          src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
+          alt="Product logo"
+        />
+      </div>
       <nav id="nav-bar">
         <ul>
           <li><a href="#features" class="nav-link">Features</a></li>
@@ -18,7 +29,7 @@
       </nav>
     </header>
     <main>
-      <h1>Hello</h1>
+      <h1>Handcrafted, home-made masterpieces</h1>
       <form
         action="https://www.freecodecamp.com/email-submit"
         method="post"
@@ -37,40 +48,54 @@
 
       <!-- feature section -->
       <section id="features">
-        <div class="">
-          <i></i>
+        <div class="feature-items">
+          <i class="fa fa-3x fa-fire"></i>
           <div class="details">
-            <h2></h2>
-            <p></p>
+            <h2>Premium Materials</h2>
+            <p>
+              Our trombones use the shiniest brass which is sourced locally.
+              This will increase the longevity of your purchase.
+            </p>
           </div>
         </div>
 
-        <div class="">
-          <i></i>
+        <div class="feature-items">
+          <i class="fa fa-3x fa-truck"></i>
           <div class="details">
-            <h2></h2>
-            <p></p>
+            <h2>Fast Shipping</h2>
+            <p>
+              We make sure you recieve your trombone as soon as we have finished
+              making it. We also provide free returns if you are not satisfied.
+            </p>
           </div>
         </div>
 
-        <div class="">
-          <i></i>
+        <div class="feature-items">
+          <i class="fa fa-3x fa-battery-full"></i>
           <div class="details">
-            <h2></h2>
-            <p></p>
+            <h2>Quality Assurance</h2>
+            <p>
+              For every purchase you make, we will ensure there are no damages
+              or faults and we will check and test the pitch of your instrument.
+            </p>
           </div>
         </div>
       </section>
 
       <!-- working section -->
       <section id="product_view">
-        <iframe id="video" src="" frameborder="0" allowfullscreen></iframe>
+        <iframe
+          id="video"
+          src="https://www.youtube-nocookie.com/embed/y8Yv4pnO7qc?rel=0&controls=0&showinfo=0"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
       </section>
 
       <!-- pricing section -->
       <section id="pricing">
         <div class="price-card">
-          <h3></h3>
+          <h3>TENOR TROMBONE</h3>
           <span class="price">$600</span>
           <ul>
             <li>Lorem ipsum.</li>
@@ -82,8 +107,8 @@
         </div>
 
         <div class="price-card">
-          <h3></h3>
-          <span class="price">$600</span>
+          <h3>BASS TROMBONE</h3>
+          <span class="price">$900</span>
           <ul>
             <li>Lorem ipsum.</li>
             <li>Lorem ipsum.</li>
@@ -94,8 +119,8 @@
         </div>
 
         <div class="price-card">
-          <h3></h3>
-          <span class="price">$600</span>
+          <h3>VALVE TROMBONE</h3>
+          <span class="price">$1200</span>
           <ul>
             <li>Lorem ipsum.</li>
             <li>Lorem ipsum.</li>
@@ -105,16 +130,16 @@
           <a class="button">select</a>
         </div>
       </section>
+      <footer>
+        <nav id="footer-nav">
+          <ul class="footer-ul">
+            <li><a href="#" class="nav-link">Privacy</a></li>
+            <li><a href="#" class="nav-link">Terms</a></li>
+            <li><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="copyright">Copyright 2023, Original Trombones</p>
+      </footer>
     </main>
-    <footer>
-      <nav id="footer-nav">
-        <ul>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">Copyright 2023, Product Name</p>
-    </footer>
   </body>
 </html>
