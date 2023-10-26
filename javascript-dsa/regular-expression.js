@@ -90,3 +90,95 @@ console.log(lastRegex.test(caboose));
 let quoteSample4 = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g;
 console.log(quoteSample4.match(alphabetRegexV2).length);
+
+// Match everything but letters and numbers
+// "\W" is a character class opposite to "\w" and equals [^A=Za-z0-9]
+let quoteSample5 = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+console.log(quoteSample5.match(nonAlphabetRegex));
+
+// Match All Numbers with shortcut
+// The shortcut for digits is \d equals [0-9]
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g;
+console.log(movieName.match(numRegex));
+
+// Match All Non-Numbers
+// \D is the shortcut equals [^0-9]
+let noNumRegex = /\D/g;
+console.log(movieName.match(noNumRegex));
+
+// Restrict Possible Username
+// 1. username can only be alphanumeric
+// 2. Numbers should be at the end and cannot start with number
+// 3. username can be uppercase or lowercase
+// 4. should be 2 char long. 2 char username can have only letters
+let userName = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d{2,}$/i;
+// userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
+// userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+console.log(userCheck.test(userName));
+
+// Match white spaces
+// \s is a whitespaces char class equals [ \r\t\f\n\v]
+let sample = "Whitespace is important in separating word";
+let countWhiteSpace = /\s/g;
+console.log(sample.match(countWhiteSpace));
+
+// Match Non-white space characters
+// \S is used equals [^ \r\t\f\n\v]
+let countNonWhiteSpace = /\S/g;
+console.log(sample.match(countNonWhiteSpace));
+
+// Specify upper and lower number matches
+// {} are used to specify the upper and lower number of repeating characters
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/gi;
+console.log(ohRegex.test(ohStr));
+
+// specify lower number of letters
+let haStr = "Hazzzzah";
+let haRegex = /haz{4,}ah/i;
+console.log(haRegex.test(haStr));
+
+// Specify the exact number of matches
+let timStr = "Timmmmber";
+let timRegex = /tim{4}ber/i;
+console.log(timRegex.test(timStr));
+
+// Check for All or None
+// ? is used to match the string for both with the specified char or without it
+let favWordAmerican = "favorite";
+let favWordBritish = "Favourite";
+let favRegex = /favou?rite/i;
+console.log(
+  favRegex.test(favWordAmerican) + "  " + favRegex.test(favWordBritish)
+);
+
+// Positive and negative lookahead
+// "?=" positive lookahead will make sure the element pattern is there
+// "?!" negative lookahead will make sure the element pattern is not there
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{5,})(?=\D+\d{2,})/i;
+console.log(pwRegex.test(sampleWord));
+
+// Check for mixed grouping of character
+let nameString = "Eleanor Roosevelt";
+let nameRegex = /(Eleanor|Franklin)\D* Roosevelt/i;
+console.log(nameRegex.test(nameString));
+
+// Reuse Pattern using Capture groups
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/;
+console.log(reRegex.test(repeatNum));
+
+// use capture group to search and replace
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/i;
+let replaceText = "$3 $2 $1";
+console.log(str.replace(fixRegex, replaceText));
+
+// remove white spaces from start and end
+let hello = "   Hello, world!   ";
+let wsRegex = /^(\s+)|(\s+)$/g;
+console.log(hello.replace(wsRegex, ""));
