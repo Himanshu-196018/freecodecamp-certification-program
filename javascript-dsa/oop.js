@@ -112,3 +112,112 @@ console.log(freya);
 freya.describe();
 
 // Understanding Prototype
+console.log(Human.prototype.isPrototypeOf(freya));
+
+// Understand the prototype chain
+// Object is supertype for all objects created
+console.log(Object.prototype.isPrototypeOf(Human));
+
+// Using inheritance
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+// Inheriting behaviors from supertype
+freya = Object.create(Animal.prototype); // inheritance
+freya.eat();
+
+// Setting child's prototype to an Instaance of the parent
+Human.prototype = Object.create(Animal.prototype);
+let arcane = new Human("Arcane");
+arcane.eat();
+
+// Reset an inherited Constwructor Property
+Human.prototype.constructor = Human;
+console.log(arcane.constructor);
+
+// Add method after inheritance
+Human.prototype.describe = function () {
+  console.log(`My name is ${this.name}`);
+};
+arcane.describe();
+
+// Override Inherited method
+Bird.prototype.fly = function () {
+  console.log("I am flying!");
+};
+
+function Penguin() {}
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.fly = function () {
+  console.log("Alas, this is a flightless bird.");
+};
+
+canary.fly();
+let penguin = new Penguin();
+penguin.fly();
+
+// Using a mixin to add common behavior between unrelated Objects
+let glideMixin = (obj) => {
+  obj.glide = function () {
+    console.log("Can glide.");
+  };
+};
+
+let bird = {
+  name: "Donald",
+  numLegs: 2,
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat",
+};
+
+glideMixin(bird);
+glideMixin(boat);
+
+bird.glide();
+boat.glide();
+
+// Using closure to protect properties within an  object from being modified externally
+// changing variable scope to local in constructor
+function Car() {
+  let model = "Sedan";
+  this.getModel = function () {
+    return model;
+  };
+}
+
+let car = new Car();
+console.log(car.getModel());
+
+// Understanding the Immediately Invoked function Expression (IIFE)
+(function () {
+  console.log("This is damn good...");
+})();
+
+// Use IIFE to create a module
+// Module
+let funModule = (function () {
+  return {
+    isCuteMixin: function (obj) {
+      obj.isCute = function () {
+        return true;
+      };
+    },
+    singMixin: function (obj) {
+      obj.sing = function () {
+        console.log("Singing to an awsome tune");
+      };
+    },
+  };
+})();
+
+funModule.isCuteMixin(canary);
+console.log(canary.isCute());
